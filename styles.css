@@ -26,12 +26,13 @@
   /* COLOR */
   --bgColor : #f8f8f8;
   --bodyTextColor : #667085;
-  /* --headingTextColor : #111111; */
+  --headingTextColor : #000000;
+  --forgotPasswordTextColor: #000000;
   --inputBorderColor: #d0d5dd;
   --primaryButtonColor : #000000;
   --onPrimaryButtonColor: #ffffff;
   --onContinueButtonColor: #0c111d;
-  /* --borderColor: #e8e8e8; */
+  --borderColor: #eaecf0;
   --dowColor: rgba(0, 0, 0, 0.2);
 
   /* SPACING */
@@ -65,15 +66,18 @@
 }
 
 
-/* [data-theme="dark"]{
-   --bgColor : #02020f;
-   --bodyTextColor : #667085;
-   --headingTextColor : #db1a1a;
-   --primaryButtonColor : #000;
-   --onPrimaryButtonColor: #ff02ea;
-   --inputBorderColor: #d0d5dd;
-   --dowColor: rgba(0, 0, 0, 0.12);
-  } */
+[data-theme="dark"] {
+  --bgColor : #060606;
+  --bodyTextColor : #667085;
+  --headingTextColor : #f8f8f8;
+  --forgotPasswordTextColor: #f8f8f8;
+  --inputBorderColor: #d0d5dd;
+  --primaryButtonColor : #000000;
+  --onPrimaryButtonColor: #ffffff;
+  --onContinueButtonColor: #0c111d;
+  --borderColor: #eaecf0;
+  --dowColor: rgba(0, 0, 0, 0.2);
+}
 
 
 .main-container {
@@ -84,6 +88,7 @@
   justify-content: center;
   align-items: center;
   padding: var(--space9) var(--space10);
+  background-color: var(--bgColor);
 }
 
 .form {
@@ -105,7 +110,7 @@
   justify-content: start;
   align-items: start;
   row-gap: var(--space7);
-  border-bottom: 1px solid #eaecf0;
+  border-bottom: 1px solid var(--borderColor);
   padding-bottom: var(--space7);
 }
 
@@ -132,7 +137,7 @@
 .welcome-text-container h1 {
   font-size: var(--clampVariable);
   font-weight: var(--fontWeight-semiBold);
-  color: var(--primaryButtonColor);
+  color: var(--headingTextColor);
 }
 
 .welcome-text-container p {
@@ -207,7 +212,7 @@ input:valid {
 .forgot-password p {
   font-size: var(--fontSize-xs);
   font-weight: var(--fontWeight-medium);
-  color: var(--primaryButtonColor);
+  color: var(--forgotPasswordTextColor);
   cursor: pointer;
 }
 
@@ -333,9 +338,26 @@ a:visited {
 }
 
 .terms-container span {
-  color: var(--primaryButtonColor);
+  color: var(--forgotPasswordTextColor);
   font-size: var(--fontSize-small);
   font-weight: var(--fontWeight-semiBold);
+}
+
+/* Dark Mode Effect */
+@media (prefers-color-scheme: dark) {
+  :root {
+  --bgColor : #060606;
+  --bodyTextColor : #667085;
+  --headingTextColor : #f8f8f8;
+  --forgotPasswordTextColor: #f8f8f8;
+  --inputBorderColor: #d0d5dd;
+  --primaryButtonColor : #000000;
+  --onPrimaryButtonColor: #ffffff;
+  --onContinueButtonColor: #0c111d;
+  --borderColor: #eaecf0;
+  --dowColor: rgba(0, 0, 0, 0.2);
+
+  }
 }
 
 
@@ -352,21 +374,6 @@ a:visited {
   padding: var(--space5);
 }
   
-}
-
-@media screen and (max-width: 992px)  {
-
-/* .form {
-  width: 44%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  row-gap: var(--space8);
-  padding: var(--space5);
-} */
-
 }
 
 @media screen and (max-width: 728px)  {
